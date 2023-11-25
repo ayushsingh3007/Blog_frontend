@@ -7,7 +7,7 @@ import { useNavigate, useParams, Link } from 'react-router-dom';
 const Detail = () => {
     const [data,setData]=useState([])
     useEffect(()=>{
-        axios.get('https://blog-backend-789z.onrender.com/api/store')
+        axios.get(''https://blog-backend-789z.onrender.com//store/')
       .then(response => {
        
         setData(response.data);
