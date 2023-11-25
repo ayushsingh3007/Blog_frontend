@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Hollywood() {
     const [data,setData]=useState([])
     useEffect(()=>{
-        axios.get('https://blog-backend-789z.onrender.com/api/store')
+        axios.get('https://blog-backend-789z.onrender.comapi/store/')
       .then(response => {
        
         setData(response.data);
