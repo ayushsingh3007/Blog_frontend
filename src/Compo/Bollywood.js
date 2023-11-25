@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Bollywood() {
     const [data,setData]=useState([])
     useEffect(()=>{
-        axios.get('https://blog-backend-789z.onrender.com//store/')
+        axios.get('https://blog-backend-789z.onrender.com/api/store/')
       .then(response => {
        
         setData(response.data);
