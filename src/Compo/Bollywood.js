@@ -22,7 +22,7 @@ function Bollywood() {
 <div id='latest-home'>
  
   <div id='latest-item'>
-    {data.filter((item)=>item.id===65).map((item,index)=>{
+    {data.filter((item)=>item.id===5).map((item,index)=>{
       return(
         <>
        <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
