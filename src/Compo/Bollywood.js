@@ -1,28 +1,32 @@
-import React, { useEffect,useState } from 'react'
+import React,{ useEffect,useState }  from 'react'
 import axios from 'axios';
+
 import "./Style/Style.css"
 import { Link } from 'react-router-dom';
 function Bollywood() {
-    const [data,setData]=useState([])
-    useEffect(()=>{
-        axios.get('https://blog-backend-789z.onrender.com/api/store/')
-      .then(response => {
-       
-        setData(response.data);
-        
-      }).catch(error => {
-        console.error('Error:', error);
-      });
-        
-    },[])
+  const [data,setData]=useState([])
+  useEffect(()=>{
+      axios.get('http://localhost:4000/api/store/')
+    .then(response => {
+     
+      setData(response.data);
+      
+    }).catch(error => {
+      console.error('Error:', error);
+    });
+      
+  },[])
+
   return (
     <>
-         
+
+    
+        
 <h3 id='the-latest'>The Latest</h3>
 <div id='latest-home'>
  
   <div id='latest-item'>
-    {data.filter((item)=>item.id===5).map((item,index)=>{
+    {data.filter((item)=>item.id===1).map((item,index)=>{
       return(
         <>
        <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
@@ -35,7 +39,7 @@ function Bollywood() {
     })} 
 </div>
 <div id='latest-item'>
-{data.filter((item)=>item.id===66).map((item,index)=>{
+{data.filter((item)=>item.id===11).map((item,index)=>{
       return(
         <>
         <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
@@ -50,7 +54,7 @@ function Bollywood() {
 
     <div id='latest-item'>
 
-    {data.filter((item)=>item.id===66).map((item,index)=>{
+    {data.filter((item)=>item.id===13).map((item,index)=>{
       return(
       
     <>
@@ -68,13 +72,13 @@ function Bollywood() {
 <h3 id='top-stories'>Top Stories</h3>
 <div id='bottom-homepage'>
 <div id='bottom-item'>
-{data.filter((item)=>item.id===67).map((item,index)=>{
+{data.filter((item)=>item.id===2).map((item,index)=>{
   return(
     <>
     <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
     <img src={item.img} alt='not there'  id='bottom-img' />
     <h3>{item.name}</h3>
-  </Link>
+    </Link>
     <p>{item.story.slice(0,159)}..........</p>
     
     </>
@@ -84,7 +88,7 @@ function Bollywood() {
 })}
 </div>
 <div id="bottom-item">
-{data.filter((item)=>item.id===68).map((item,index)=>{
+{data.filter((item)=>item.id===4).map((item,index)=>{
   return(
     <>
     <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
@@ -101,7 +105,7 @@ function Bollywood() {
 </div>
 
 <div id='bottom-item'>
-  {data.filter((item)=>item.id===69).map((item,index)=>{
+  {data.filter((item)=>item.id===5).map((item,index)=>{
     return(
     <>
     <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
@@ -114,7 +118,7 @@ function Bollywood() {
   })}
 </div>
 <div id='bottom-item'>
-  {data.filter((item)=>item.id===66).map((item,index)=>{
+  {data.filter((item)=>item.id===6).map((item,index)=>{
     return(
     <>
     <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
@@ -127,20 +131,21 @@ function Bollywood() {
   })}
 </div>
 <div id='bottom-item'>
-  {data.filter((item)=>item.id===65).map((item,index)=>{
+  {data.filter((item)=>item.id===7).map((item,index)=>{
     return(
     <>
     <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
     <img src={item.img} alt='not there'  id='bottom-img'/>
     <h3>{item.name}</h3>
-</Link>    
+    </Link>
+    
     <span>{item.story.slice(0,159)}..........</span>
     
     </>)
   })}
 </div>
 <div id='bottom-item'>
-  {data.filter((item)=>item.id===67).map((item,index)=>{
+  {data.filter((item)=>item.id===5).map((item,index)=>{
     return(
     <>
     <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
@@ -154,10 +159,9 @@ function Bollywood() {
 </div>
 
 <div id='bottom-item'>
-  {data.filter((item)=>item.id===73).map((item,index)=>{
+  {data.filter((item)=>item.id===13).map((item,index)=>{
     return(
-    <>
-    <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
+    <><Link to={`/details/${item.id}/${item.cat}`}  id='link'>
     <img src={item.img} alt='not there'  id='bottom-img'/>
     <h3>{item.name}</h3>
     </Link>
@@ -186,10 +190,9 @@ function Bollywood() {
 <h3 id='top-post'>Top Posts</h3>
 <div id='bottom-right'>
    <div id="rigth-bottom-item-1">
-    {data.filter((item)=>item.id===74).map((item,index)=>{
+    {data.filter((item)=>item.id===10).map((item,index)=>{
       return(
-      <>
-      <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
+      <><Link to={`/details/${item.id}/${item.cat}`}  id='link'>
       <img src={item.img} alt='not found'  id='img-right-bottom'/>
       <h3>{item.name}</h3>
       </Link>
@@ -200,10 +203,10 @@ function Bollywood() {
 )    })}
    </div>
    <div id="rigth-bottom-item-1">
-    {data.filter((item)=>item.id===67).map((item,index)=>{
+    {data.filter((item)=>item.id===11).map((item,index)=>{
       return(
-      <>
-      <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
+      <><Link to={`/details/${item.id}/${item.cat}`}  id='link'>
+
       <img src={item.img} alt='not found' id='img-right-bottom'/>
       <h3>{item.name}</h3>
       </Link>
@@ -214,11 +217,10 @@ function Bollywood() {
 )    })}
    </div>
    <div id="rigth-bottom-item-1">
-    {data.filter((item)=>item.id===69).map((item,index)=>{
+    {data.filter((item)=>item.id===12).map((item,index)=>{
       return(
       <>
       <Link to={`/details/${item.id}/${item.cat}`}  id='link'>
-      
       <img src={item.img} alt='not found'  id='img-right-bottom'/>
       <h3>{item.name}</h3>
       </Link>
@@ -237,7 +239,7 @@ function Bollywood() {
 <div id="advertise"><h1>Advertisement</h1></div>
 
 
-     
+      
 <div id='footer'>
   <div id='footer-item'>
     <h3>Contact Us</h3>
@@ -253,9 +255,10 @@ function Bollywood() {
   <div id='footer-item'>
   <h3>SUPPORT</h3>
     <h3>FAQ</h3>
-    <h3>Contact:-📞☎</h3>
+    <h3>Contact📞☎
+    </h3>
   </div>
-</div> 
+</div>    
 
 
     
